@@ -178,7 +178,13 @@ class _ConverterScreenState extends State<ConverterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.category)),
+      appBar: AppBar(title: Text(widget.category,
+        style: TextStyle(
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
+      )),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -189,6 +195,11 @@ class _ConverterScreenState extends State<ConverterScreen> {
               onChanged: (val) {
                 input = double.tryParse(val) ?? 0.0;
               },
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -203,7 +214,13 @@ class _ConverterScreenState extends State<ConverterScreen> {
                   items: units.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(value,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),
@@ -228,7 +245,13 @@ class _ConverterScreenState extends State<ConverterScreen> {
                   items: units.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Text(value,
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),

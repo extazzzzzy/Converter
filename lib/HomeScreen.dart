@@ -7,12 +7,26 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Converter')),
+      appBar: AppBar(title:
+      Text('Converter',
+        style: TextStyle(
+        fontFamily: 'Inter',
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+      ),
+      ),),
       body: ListView.builder(
         itemCount: categories.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(categories[index]),
+            title: Text(
+                categories[index],
+                style: TextStyle(
+                fontFamily: 'Inter',
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+            ),
+          ),
             onTap: () {
               Navigator.push(
                 context,
