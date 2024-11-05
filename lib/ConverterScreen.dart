@@ -17,7 +17,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
 
   List<String> units = [];
   final Map<String, List<String>> categoryUnits = {
-    'Длина': ['Сантиметр', 'Метр', 'Километр'],
+    'Длина': ['Сантиметр', 'Метр', 'Километр', 'Фут'],
     'Масса': ['Грамм', 'Килограмм', 'Тонна'],
     'Температура': ['Цельсий', 'Фаренгейт', 'Кельвин'],
     'Валюта': ['Рубль', 'Доллар', 'Тенге'],
@@ -39,24 +39,44 @@ class _ConverterScreenState extends State<ConverterScreen> {
           if (toUnit == 'Метр') {
             output = input / 100;
           }
-          else {
+          else if (toUnit == 'Километр') {
             output = input / 100000;
+          }
+          else {
+            output = input / 30.48;
           }
         }
         else if (fromUnit == 'Метр') {
           if (toUnit == 'Сантиметр') {
             output = input * 100;
           }
-          else {
+          else if (toUnit == 'Километр') {
             output = input / 1000;
+          }
+          else {
+            output = input / 0.3048;
           }
         }
         else if (fromUnit == 'Километр') {
           if (toUnit == 'Сантиметр') {
             output = input * 100000;
           }
-          else {
+          else if (toUnit == 'Метр') {
             output = input * 1000;
+          }
+          else {
+            output = input / 0.000305;
+          }
+        }
+        else if (fromUnit == 'Фут') {
+          if (toUnit == 'Сантиметр') {
+            output = input * 30.48;
+          }
+          else if (toUnit == 'Метр') {
+            output = input * 0.3048;
+          }
+          else {
+            output = input * 0.000305;
           }
         }
       }
